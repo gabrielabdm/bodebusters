@@ -1,0 +1,14 @@
+{% extends "videorental/header.html" %}
+
+{% block content %}
+		<h3>{{movie.title}}</h3>
+		 {% load staticfiles %}
+		<img src="{{ movie.poster.url }}" alt="My image" height="500px"/>
+	<br>
+	<br>
+		<p>Stock: {{movie.stock}}</p>
+	<br>
+		{% if user.is_authenticated %}
+		<a href = "{% url 'rent_movie' pk_user=user.id pk_m=movie.id %}"> <button type="button" class="btn btn-dark">Rent</button> </a>
+		{% endif %}
+{% endblock %}

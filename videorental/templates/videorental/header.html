@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>BodeBusters</title>
+	<meta charset="utf-8" />
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'videorental/css/bootstrap.min.css' %}" type = "text/css"/>
+	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
+	
+	<style type="text/css">
+		html,
+		body {
+		  height:100%
+		}
+	</style>
+</head>
+
+<body class="body" style="background-color:#f6f6f6">
+	<div class="container-fluid" style="min-height:95%; ">
+		<div class="row">
+			  <div class="col-sm-2">
+				  <br>
+				  <center>
+					<img src="{% static 'videorental/img/BodeBusters.png' %}" class="responsive-img" style='max-height: 250px;' alt="logo">
+				  </center>
+			  </div>
+			  <div class="col-sm-10">
+				  <br>
+				  <center>
+				  <h3>Alugue os melhores filmes ja filmados!!</h3>
+				  </center>
+			  </div>
+		</div><hr>
+
+		<div class="row">
+		  <div class="col-sm-2">
+		  <br>
+
+		  <br>
+		   <!-- Great, til you resize. -->
+		   <!-- Sidebar -->
+		   <div class="bg-light border-right" id="sidebar">
+			   <div class="sidebar-heading"> Menu </div>
+			   <div class="list-group list-group-flush">
+					<a href="../" class="list-group-item list-group-item-action bg-light">Home</a>
+					<a href="/movies" class="list-group-item list-group-item-action bg-light">Movies</a>
+					<a href="/rented" class="list-group-item list-group-item-action bg-light">Rented</a>
+					<a href="/my_movies" class="list-group-item list-group-item-action bg-light">My Movies</a>
+			   </div>
+			</div>
+		  </div> <!--col-sm-2-->
+		  <div class="col-sm-10">
+		  
+			<div class='container-fluid'>
+			<br><br>
+			   {% block content %}
+			   {% endblock %}	
+			</div>
+		  </div>
+		</div> 
+	</div>
+	
+</body>
+
+</html>

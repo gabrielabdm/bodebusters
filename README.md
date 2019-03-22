@@ -1,2 +1,2 @@
 # bodebusters
-Video rental web application
+Django based video rental service

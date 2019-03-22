@@ -1,0 +1,13 @@
+{% extends "videorental/header.html" %}
+
+{% block content %}
+	{% for movie in object_list %}
+		{% if movie.rented > 0 %}
+			<h3>{{movie.title}}</h3>
+			<p>Rented: {{movie.rented}}</p>
+    		<img src="{{ movie.poster.url }}" alt="My image" height="300px" width="220px"/>
+        <br>
+		<br>
+		{% endif %}
+	{% endfor %}
+{% endblock %}

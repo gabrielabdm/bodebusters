@@ -1,0 +1,13 @@
+{% extends "videorental/header.html" %}
+
+{% block content %}
+<div class="container">
+	<h3>Login here!</h3>
+	<br>
+	<form method="post">
+		{% csrf_token %}
+		{{ form.as_p }}
+  		<button type="submit">Login</button>
+	</form>
+</div>
+{% endblock %}
