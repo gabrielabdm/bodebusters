@@ -3,11 +3,18 @@
 {% block content %}
         {% for movie in object_list %}
             {% if movie.stock > 0 %}
-                <h3><a href= "{{movie.id}}"> {{movie.title}}</a></h3>
-                <p>Stock: {{movie.stock}}</p>
-                <img src="{{ movie.poster.url }}" alt="My image" height="300px" width="220px"/>
-                <br>
-                <br>
+            <div class="row row-mine">
+		        <div class="col-sm-2">
+                    <a href= "{{movie.id}}"><img src="{{ movie.poster.url }}" alt="My image" height="300px" width="220px"/></a>
+                    <br>
+                    <br>
+                </div>
+                <div class="col-sm-6">
+                    <h4><a href= "{{movie.id}}" class="text-decoration-none text-dark"> {{movie.title}}</a></h4>
+                    <h4><small class="text-muted">Stock: {{movie.stock}}</small></h4>
+                    <p>{{movie.sumary}}</p>
+                </div>
+            </div>
             {% endif %}
         {% endfor %}
 {% endblock %}

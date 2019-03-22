@@ -2,13 +2,18 @@
 
 {% block content %}
 	{% for rented_movie in user.profile.rented_movies.all %}
-		<h3><a href= "{{rented_movie.movie.id}}"> {{rented_movie.movie.title}}</a></h3>
-		<p>Rented: {{rented_movie.quantity}}</p>
-    	<img src="{{ rented_movie.movie.poster.url }}" alt="My image" height="300px" width="220px"/>
+	<div class="row">
+		<div class="col-sm-2">
+    		<img src="{{ rented_movie.movie.poster.url }}" alt="My image" height="300px" width="220px"/>
+		</div>
+		<div class="col-sm-6">
+			<h3> {{rented_movie.movie.title}}</h3>
+			<h4><small class="text-muted">Rented: {{rented_movie.quantity}}</small></h4>
+			<br>
+			<a href = "{% url 'give_back_movie' pk_m=rented_movie.movie.id pk_user=user.id %}"> <button type="button" class="btn btn-dark">Return</button> </a>
+		</div>
         <br>
-		<br>
-		<a href = "{% url 'give_back_movie' pk_m=rented_movie.movie.id pk_user=user.id %}"> <button type="button" class="btn btn-dark">Return</button> </a>
-        <br>
-		<br>
+	</div>
+	<br>
 	{% endfor %}
 {% endblock %}

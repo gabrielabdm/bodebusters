@@ -64,7 +64,7 @@ def give_back(request, pk_user, pk_m):
                 user_rented_movie.delete()
             break
     user.save()
-    return redirect('../../movies/')
+    return redirect('../../my_movies/')
 
 
 def my_movie(request):

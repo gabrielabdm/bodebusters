@@ -3,9 +3,15 @@
 {% block content %}
 	{% for movie in object_list %}
 		{% if movie.rented > 0 %}
-			<h3>{{movie.title}}</h3>
-			<p>Rented: {{movie.rented}}</p>
-    		<img src="{{ movie.poster.url }}" alt="My image" height="300px" width="220px"/>
+			<div class="row">
+				<div class="col-sm-2">
+					<img src="{{ movie.poster.url }}" alt="My image" height="300px" width="220px"/>
+				</div>
+				<div class="col-sm-6">
+					<h3>{{movie.title}}</h3>
+					<h4><small class="text-muted">Rented: {{movie.rented}}</small></h4>
+				</div>
+			</div>
         <br>
 		<br>
 		{% endif %}

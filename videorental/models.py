@@ -8,6 +8,7 @@ class Movie(models.Model):
     poster = models.ImageField(upload_to="images/")
     stock = models.IntegerField(default = 1)
     rented = models.IntegerField(default = 0)
+    sumary = models.TextField(max_length = 200)
 
     def rent(self):
         self.stock -= 1

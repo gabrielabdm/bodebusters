@@ -2665,8 +2665,8 @@ fieldset:disabled a.btn {
 
 .btn-dark:hover {
   color: #fff;
-  background-color: #23272b;
-  border-color: #1d2124;
+  background-color: #8E5480;
+  border-color: #98638B;
 }
 
 .btn-dark:focus, .btn-dark.focus {
@@ -6568,13 +6568,13 @@ button.bg-danger:focus {
 }
 
 .bg-light {
-  background-color: #f8f9fa !important;
+  background-color: #D4D2D2 !important;
 }
 
 a.bg-light:hover, a.bg-light:focus,
 button.bg-light:hover,
 button.bg-light:focus {
-  background-color: #dae0e5 !important;
+  background-color: #8E5480 !important;
 }
 
 .bg-dark {

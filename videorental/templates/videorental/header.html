@@ -16,22 +16,16 @@
 	</style>
 </head>
 
-<body class="body" style="background-color:#f6f6f6">
-	<div class="container-fluid" style="min-height:95%; ">
+<body class="body" style="background-color:#D4D2D2">
+	<div class="container-fluid" style="min-height:95%;">
 		<div class="row">
-			  <div class="col-sm-2">
+			  <div class="col-sm-12" style = "background-color:#682457">
 				  <br>
 				  <center>
-					<img src="{% static 'videorental/img/BodeBusters.png' %}" class="responsive-img" style='max-height: 250px;' alt="logo">
+					<img src="{% static 'videorental/img/header.png' %}" class="responsive-img" style='max-height: 400px;' alt="logo">
 				  </center>
 			  </div>
-			  <div class="col-sm-10">
-				  <br>
-				  <center>
-				  <h3>Alugue os melhores filmes ja filmados!!</h3>
-				  </center>
-			  </div>
-		</div><hr>
+		</div><hr class="style13">
 
 		<div class="row">
 		  <div class="col-sm-2">
@@ -43,10 +37,12 @@
 		   <div class="bg-light border-right" id="sidebar">
 			   <div class="sidebar-heading"> Menu </div>
 			   <div class="list-group list-group-flush">
-					<a href="../" class="list-group-item list-group-item-action bg-light">Home</a>
-					<a href="/movies" class="list-group-item list-group-item-action bg-light">Movies</a>
-					<a href="/rented" class="list-group-item list-group-item-action bg-light">Rented</a>
-					<a href="/my_movies" class="list-group-item list-group-item-action bg-light">My Movies</a>
+					<a href="../" class="list-group-item list-group-item-action bg-light text-dark">Home</a>
+					<a href="/movies" class="list-group-item list-group-item-action bg-light text-dark">Movies</a>
+					<a href="/rented" class="list-group-item list-group-item-action bg-light text-dark">Rented</a>
+					{% if user.is_authenticated %}
+						<a href="/my_movies" class="list-group-item list-group-item-action bg-light text-dark">My Movies</a>
+					{% endif %}
 			   </div>
 			</div>
 		  </div> <!--col-sm-2-->
